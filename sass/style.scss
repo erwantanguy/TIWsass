@@ -14,6 +14,18 @@ $pm:$police-mono;
 $tablet-width: 768px;
 $desktop-width: 992px;
 
+@mixin mobile{
+     @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin nomobile{
+   @media (min-width: #{$tablet-width}) {
+    @content;
+  } 
+}
+
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
@@ -131,6 +143,9 @@ body{
         &:hover{
             color: #000;
         }
+        @include mobile{
+            color: #123456;
+        }
     }
     div:not([class^=block]){
         a{
@@ -158,6 +173,8 @@ body{
             family: serif;
         }
     }
+    
+    
     
     @include tablet {
         background-color: #333;
