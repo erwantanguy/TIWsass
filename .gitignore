@@ -1,2 +1,5 @@
 
 .DS_Store
+*.map
+js/monjs.js
+js/monjs.js
