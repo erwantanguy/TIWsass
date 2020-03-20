@@ -11,6 +11,38 @@ $ps:$police-secondaire;
 $pm:$police-mono;
 
 
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin border-radius($valeur:5px,$marge:5px){
+    border-radius: $valeur;
+    margin:$marge;
+}
+.coin{
+    @include border-radius;
+}
+.coinrond{
+    @include border-radius(20px,10px);
+}
+@mixin opacité($valeur:1){
+    color:rgba(255,0,0,$valeur);
+}
+.red{
+    @include opacité(.7);
+}
+
 $couleur-principal: #657429;
 $couleur-secondaire: #704529;
 $cp: $couleur-principal;
@@ -48,6 +80,16 @@ $cs: $couleur-secondaire;
         @extend %monplaceholder;
         background-color: blue;
     }
+}
+
+.maclass{
+    font-size: 1.3em;
+    color: blue;
+    margin: 5px;
+}
+.autreClass{
+    @extend .maclass;
+    color: red;
 }
 
 body{
@@ -116,36 +158,22 @@ body{
             family: serif;
         }
     }
-}
-
-
-
-
-
-
-
-
-$tablet-width: 768px;
-$desktop-width: 1024px;
-
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
-
-body{
+    
     @include tablet {
-        color: burlywood;
+        background-color: #333;
     }
 
     @include desktop {
-        color: turquoise;
+        background-color: #ccc;
     }
+     
 }
+
+
+
+
+
+
+
+
+ 
