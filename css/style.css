@@ -1,2 +1,2 @@
-body{background:#efefef}body h1{color:#999;transition:all 1s ease}body h1:hover{color:#000}
+body{background:#efefef}body h1{color:#999;transition:all 1s ease}body h1:hover{color:#000}@media (min-width: 768px) and (max-width: 1023px){body{color:burlywood}}@media (min-width: 1024px){body{color:turquoise}}
 /*# sourceMappingURL=style.css.map */
