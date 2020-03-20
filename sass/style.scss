@@ -25,6 +25,11 @@ $cs: $couleur-secondaire;
         family:$pm;
     }
     color:#fff;
+    margin: 5px;
+    opacity: .7;
+    &:hover{
+        opacity: 1;
+    }
 }
 .block{
     &-error{
@@ -85,7 +90,7 @@ body{
             color: #000;
         }
     }
-    div{
+    div:not([class^=block]){
         a{
             
         }
