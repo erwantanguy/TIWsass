@@ -1,196 +1,155 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,200,300,400,500,600,700,800,900|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
-
-
-$police-principale: 'Roboto';
-$police-titre: 'Roboto Condensed';
-$police-secondaire: 'Roboto Slab';
-$police-mono: 'Roboto Mono';
-$pp:$police-principale;
-$pt:$police-titre;
-$ps:$police-secondaire;
-$pm:$police-mono;
-
-
-$tablet-width: 768px;
-$desktop-width: 992px;
-
-@mixin mobile{
-     @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
+@font-face {
+ font-family: "scriptina";
+ src: url("../fonts/scriptina.ttf") format("truetype");
 }
 
-@mixin nomobile{
-   @media (min-width: #{$tablet-width}) {
-    @content;
-  } 
-}
-
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop{
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
-
-@mixin border-radius($valeur:5px,$marge:5px){
-    border-radius: $valeur;
-    margin:$marge;
-}
-.coin{
-    @include border-radius;
-}
-.coinrond{
-    @include border-radius(20px,10px);
-}
-@mixin opacité($valeur:1){
-    color:rgba(255,0,0,$valeur);
-}
-.red{
-    @include opacité(.7);
-}
-
-$couleur-principal: #657429;
-$couleur-secondaire: #704529;
-$cp: $couleur-principal;
-$cs: $couleur-secondaire;
-
-%monplaceholder{
-    border:1px solid rgba(0,0,0,05);
-    border-radius: 20px 0;
+//Mes Variables
+$couleurPrincipale:red;
+$couleurSecondaire:purple;
+$cp:$couleurPrincipale;
+$cs:$couleurSecondaire;
+//Placeholders
+%message{
     padding: .5em;
-    font:{
-        weight: bold;
-        family:$pm;
-    }
-    color:#fff;
-    margin: 5px;
-    opacity: .7;
-    &:hover{
-        opacity: 1;
-    }
+    border:1px solid;
+    border-radius:5px;
+    font-weight: bold;
+    margin:20px;
+    text-align: center;
 }
-.block{
-    &-error{
-        @extend %monplaceholder;
-        background-color: red;
-    }
-    &-valid{
-        @extend %monplaceholder;
-        background-color: green;
-    }
-    &-warning{
-        @extend %monplaceholder;
-        background-color: orange;
-    }
-    &-info{
-        @extend %monplaceholder;
-        background-color: blue;
-    }
+//MIXINs
+@mixin br($radius:5px,$border:#000,$fond:#aaa,$size:1em){
+    border-radius:$radius;
+    border:1px solid $border;
+    color: $border;
+    background-color: $fond;
+    margin:20px;
+    padding:20px;
+    font-size:$size;
 }
 
-.maclass{
-    font-size: 1.3em;
-    color: blue;
-    margin: 5px;
-}
-.autreClass{
-    @extend .maclass;
-    color: red;
+button{
+    @include br(120 px,yellow,purple,10em);
 }
 
-body{
-    font-family: $pp;
-    background: #efefef;
-    color: $cp !important;
-    a{
-        color: red;
-        font-size: 2em;
-        transition: all 1s ease;
-        &:hover{
-            color: purple;
-        }
-        &.lienautre{
-            font-size: 1.7em;
-        }
-    }
-    #masection{
-        a{
-            color: chocolate;
-            font-size: 1.5em;
-            &:hover{
-                color: goldenrod;
+
+
+header{
+    nav{
+        li{
+            a{
+/*                color: $cp;
+                transition: all ease 1s;
+                text-decoration: none;
+                &:hover{
+                    color:$cs;
+                    font-size:1.2em;
+                }*/
             }
         }
     }
-    h1,h2,h3,h4{
-        font-family: $pt;
-    }
-    blockquote{
-        font-family: $pm;
-    }
-    em,strong{
-        font-family: $ps;
-    }
-    h1{
-        color: #999;
-        transition: all 1s ease;
-        &:hover{
-            color: #000;
-        }
-        @include mobile{
-            color: #123456;
-        }
-    }
-    div:not([class^=block]){
-        a{
-            
-        }
-        &:hover,&.class{
-            background: red;
-        }
-    }
-    div{
-        background-color: $cs;
-        .foo{
-            color: activecaption;
-            background-color: yellow;
-            &-bar{
-                color: bisque;
-                background-color: yellow;
-            }
-        }
-    }
-    p{
-        font:{
-            size: 1.2em;
-            weight: bold;
-            family: serif;
-        }
-    }
-    
-    
-    
-    @include tablet {
-        background-color: #333;
-    }
-
-    @include desktop {
-        background-color: #ccc;
-    }
-     
 }
 
 
+.message-error{
+    @extend %message;
+    color:red;
+    border-color:red;
+}
+.message-valid{
+    @extend %message;
+    color:green;
+    border-color:green;
+}
+.message-warning{
+    @extend %message;
+    color:orange;
+    border-color:orange;
+}
+.message-info{
+    @extend %message;
+    color:blue;
+    border-color:blue;
+}
 
+.maquette{
+    #actions{
+        i{
+            font-size: 10em;
+        }
+    }
+}
 
-
-
-
-
- 
+.bakery{
+    header#top{
+        background: url('../images/header-bg.jpg') center top;
+        background-size: cover;
+        position:relative;
+        &:after{
+            content:url('../images/bullets.png');
+            display: block;
+            position: absolute;
+/*            bottom: -120px;*/
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+        nav{
+            ul:not(.socialmedia){
+                li{
+                    padding: 0 25px;
+/*                    &:after{
+                        content:"~";
+                    }*/
+                    a{
+                        text-transform: uppercase;
+                        color:#fff; 
+                    }
+                }
+            }
+        }
+        article{
+            %styleheader{
+                color:#fff;
+            }
+            h1{
+                @extend %styleheader;
+                font-size: 4rem;
+                &:after{
+                    content: url("../images/dashed-line.png");
+                    display: block;
+                } 
+            }
+            h2{
+                @extend %styleheader;
+                font-size: 1.8rem;
+                padding: 0 300px;
+                font-weight: 100;
+            }
+            .btn{
+                text-transform: uppercase;
+                border: none;
+                border-radius:0;
+                word-spacing: 1em;
+                letter-spacing: .5em;
+            }
+            .btn-secondary{
+                background-color: rgba(86,83,76,.5);
+            }
+        }
+    }
+    section#cakes{
+        background: url('../images/cakes-bg.jpg') center top;
+        background-size: cover;
+        position:relative;
+        article{
+            figcaption{
+                font-family: "scriptina";
+                font-size: 2em;
+                padding: 30px 60px;
+                color:#A47D5E;
+                background: url("../images/quote-left.png") top left no-repeat,url("../images/quote-right.png") bottom right no-repeat;
+            }
+        }
+    }
+}

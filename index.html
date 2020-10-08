@@ -1,43 +1,81 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sass github et netlify</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Test</h1>
-        <p>
-            Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>. Magnam, consequuntur, eaque iste repudiandae sit quam odit autem voluptatum dignissimos error sint <em>maxime quibusdam ad maiores</em> quae soluta doloribus quidem explicabo.
-        </p>
-        <div class="block-error">
-            Test erreur
+        <header class="container">
+            <div class="row">
+            <h1 class="col-md-6 col-xl-4">Mon superbe titre</h1>
+            <nav class="col-md-6 col-xl-8">
+                <ul class="d-flex justify-content-between">
+                    <li>
+                        <a href="#">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+        <div><i class="fab fa-accessible-icon"></i> TODO write content <i class="fas fa-acorn"></i></div>
+        <i class="fad fa-baby" style="font-size:15em;"></i>
+        <div class="message-error">
+            Il y a une erreur !
         </div>
-        <div class="block-warning">
-            Test attention
+        <div class="message-valid">
+            C'est correct !
         </div>
-        <div class="block-info">
-            Test information
+        <div class="message-warning">
+            Attention !
         </div>
-        <div class="block-valid">
-            Test validation
+        <div class="message-info">
+            Vous avez ouvert la page index
         </div>
-        <h2>Sous titre</h2>
-        <blockquote>
-            texte en citation longue
-        </blockquote>
-        <img src="images/image.png" alt="test image">
-        <p><a href="#">lien 1</a></p>
-        <section id="masection">
-            <a href="#">lien 2</a>
+        <button>
+            Mon bouton
+        </button>
+        <section class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://picsum.photos/id/237/600/200" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/id/230/600/200" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/id/145/600/200" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
         </section>
-        <section>
-            <a href="#" class="lienautre">lien 3</a>
+        <section class="container">
+            <div class="row">
+                <article class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/IMpjSrWwS5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            </article>
+            </div>
         </section>
-        <script src="js/monjs.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  
     </body>
 </html>
